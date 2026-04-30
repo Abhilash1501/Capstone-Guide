@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MBO649 Capstone — Start Tomorrow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1814;
+    --ink-soft: #4a443d;
+    --paper: #f6f1e4;
+    --paper-deep: #ede5d1;
+    --paper-edge: #d8cfb8;
+    --saffron: #b54a2c;
+    --saffron-deep: #8a3520;
+    --sage: #6b7a52;
+    --sage-deep: #4a5638;
+    --plum: #6b2737;
+    --muted: #8a8275;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 36px 32px 80px;
+  }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead {
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding: 12px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .masthead .left { font-weight: 600; }
+  .masthead .right { color: var(--muted); }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--saffron-deep);
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 8vw, 110px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--saffron-deep);
+  }
+  .lede {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    max-width: 720px;
+    border-left: 1px solid var(--ink);
+    padding-left: 24px;
+  }
+
+  /* ---------- THE PLAN ----------*/
+  .plan {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .section-head {
+    margin-bottom: 36px;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    color: var(--saffron-deep);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(34px, 5vw, 60px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  h2 em { font-style: italic; color: var(--saffron-deep); font-weight: 400; }
+  .section-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 660px;
+    line-height: 1.45;
+  }
+
+  /* ---------- TRACKS GRID ---------- */
+  .tracks-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--ink);
+  }
+  .track-card {
+    padding: 32px 28px;
+    border-right: 1px solid var(--ink);
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+  }
+  .track-card:last-child { border-right: none; }
+  .track-card.t0 { background: var(--ink); color: var(--paper); }
+  .track-card.t0 .tag { color: var(--saffron); border-color: var(--saffron); }
+  .track-card.t0 h3 { color: var(--paper); }
+  .track-card.t0 .who { color: rgba(246, 241, 228, 0.7); }
+  .track-card.t0 .whatfor { color: rgba(246, 241, 228, 0.85); }
+  .track-card.t0 .deadlines { border-top-color: rgba(246, 241, 228, 0.25); }
+  .track-card.t0 .deadlines li { border-top-color: rgba(246, 241, 228, 0.18); color: var(--paper); }
+  .track-card.t0 .deadlines small { color: rgba(246, 241, 228, 0.6); }
+  .track-card.t0 .marks-line { color: var(--saffron); border-top-color: rgba(246, 241, 228, 0.25); }
+
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 5px 9px;
+    border: 1px solid var(--ink);
+    margin-bottom: 18px;
+    font-weight: 600;
+    align-self: flex-start;
+  }
+  .track-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .track-card .who {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  .track-card .whatfor {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+  .track-card .deadlines {
+    list-style: none;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed rgba(28,24,20,0.25);
+  }
+  .track-card .deadlines li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    padding: 8px 0;
+    border-top: 1px dashed rgba(28,24,20,0.18);
+    font-size: 13.5px;
+    align-items: baseline;
+  }
+  .track-card .deadlines li:first-child { border-top: none; }
+  .track-card .deadlines small {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--saffron-deep);
+    font-weight: 600;
+  }
+  .marks-line {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(28,24,20,0.25);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--saffron-deep);
+    font-weight: 600;
+  }
+
+  /* ---------- TOMORROW BLOCK ---------- */
+  .tomorrow {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .day-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .day-row {
+    display: contents;
+  }
+  .day-row .when {
+    padding: 28px 24px;
+    border-bottom: 1px solid var(--ink);
+    background: var(--paper-deep);
+    border-right: 1px solid var(--ink);
+  }
+  .day-row .when .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--saffron-deep);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .day-row .when .when-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .day-row .when .when-name em {
+    font-style: italic;
+    color: var(--saffron-deep);
+  }
+  .day-row .when .dates {
+    margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .day-row .what {
+    padding: 28px 30px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .day-row .what .group {
+    margin-bottom: 18px;
+  }
+  .day-row .what .group:last-child { margin-bottom: 0; }
+  .day-row .what .group-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .day-row .what ul {
+    list-style: none;
+  }
+  .day-row .what li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .day-row .what li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: var(--saffron-deep);
+    font-weight: 600;
+  }
+
+  /* ---------- CALENDAR ---------- */
+  .calendars {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .legend-mini {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    align-items: center;
+  }
+  .legend-mini .item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .legend-mini .sw {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+  .legend-mini .sw.deadline { background: var(--saffron); }
+  .legend-mini .sw.target { border: 2px solid var(--sage-deep); background: transparent; }
+  .legend-mini .sw.note { background: var(--paper-deep); border: 1px solid var(--ink); }
+
+  .month-block {
+    padding: 36px 0;
+    border-top: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .month-block:first-of-type { border-top: 1px solid var(--ink); margin-top: 0; }
+
+  .month-head {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 12px;
+  }
+  .month-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+  .month-name em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--saffron-deep);
+    margin-left: 4px;
+  }
+  .month-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .cal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+  }
+  .cal .dow {
+    padding: 8px 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--muted);
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    background: var(--paper-deep);
+    font-weight: 600;
+  }
+  .cal .day {
+    aspect-ratio: 1 / 1;
+    padding: 8px 8px 4px;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    min-height: 64px;
+  }
+  .cal .day.out {
+    background: repeating-linear-gradient(45deg, var(--paper), var(--paper) 4px, var(--paper-edge) 4px, var(--paper-edge) 5px);
+    color: var(--muted);
+  }
+  .cal .day .num {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .cal .day.out .num {
+    color: var(--paper-edge);
+    font-weight: 300;
+  }
+  .cal .day .tag-d {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 8.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    margin-top: auto;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .cal .day.deadline { background: var(--saffron); color: #fff; }
+  .cal .day.deadline .num { color: #fff; font-weight: 500; }
+  .cal .day.deadline .tag-d { color: rgba(255,255,255,0.92); font-weight: 600; }
+  .cal .day.target { background: var(--paper); }
+  .cal .day.target .num {
+    color: var(--sage-deep);
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+  }
+  .cal .day.target .num::after {
+    content: "";
+    position: absolute;
+    inset: -4px -6px;
+    border: 1.5px solid var(--sage-deep);
+    border-radius: 50%;
+  }
+  .cal .day.target .tag-d { color: var(--sage-deep); font-weight: 600; }
+  .cal .day.note { background: var(--paper-deep); }
+  .cal .day.note .tag-d { color: var(--ink); font-weight: 600; }
+
+  .sidebar {
+    padding-top: 8px;
+  }
+  .sidebar .theme {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    border-left: 2px solid var(--saffron);
+    padding-left: 16px;
+  }
+  .sidebar .summary {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+    padding-left: 18px;
+    line-height: 1.55;
+  }
+  .sidebar .focus-list {
+    list-style: none;
+    border-top: 1px solid var(--ink);
+  }
+  .sidebar .focus-list li {
+    padding: 14px 0;
+    border-bottom: 1px dashed rgba(28,24,20,0.18);
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 14px;
+    align-items: baseline;
+  }
+  .sidebar .focus-list .d-num {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    text-align: right;
+    line-height: 1;
+  }
+  .sidebar .focus-list li.deadline-r .d-num { color: var(--saffron-deep); }
+  .sidebar .focus-list li.target-r .d-num { color: var(--sage-deep); }
+  .sidebar .focus-list li.note-r .d-num { color: var(--ink); }
+  .sidebar .focus-list .d-info {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+  .sidebar .focus-list .d-info small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 3px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  /* ---------- DON'T FAIL ---------- */
+  .dontfail {
+    padding: 56px 0;
+    border-bottom: 3px solid var(--ink);
+  }
+  .fail-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--ink);
+  }
+  .fail-list .item {
+    padding: 22px 26px;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    background: var(--paper);
+  }
+  .fail-list .item:nth-child(2n) { border-right: none; }
+  .fail-list .item:nth-last-child(-n+2) { border-bottom: none; }
+  .fail-list .item .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--saffron-deep);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .fail-list .item h5 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 17px;
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+  .fail-list .item p {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    margin-top: 40px;
+    padding-top: 22px;
+    border-top: 3px solid var(--ink);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 880px) {
+    .wrap { padding: 22px 16px 60px; }
+    .hero { padding: 44px 0 36px; }
+    .lede { font-size: 18px; padding-left: 18px; }
+    .tracks-3 { grid-template-columns: 1fr; }
+    .track-card { border-right: none; border-bottom: 1px solid var(--ink); }
+    .track-card:last-child { border-bottom: none; }
+    .day-grid { grid-template-columns: 1fr; }
+    .day-row .when { border-right: none; padding: 20px 22px 14px; }
+    .day-row .what { padding: 20px 22px; }
+    .month-block { grid-template-columns: 1fr; gap: 28px; padding: 28px 0; }
+    .month-name { font-size: 36px; }
+    .cal .day { padding: 5px 5px 3px; min-height: 50px; }
+    .cal .day .num { font-size: 14px; }
+    .cal .day .tag-d { font-size: 7.5px; letter-spacing: 0.02em; }
+    .cal .day.target .num::after { inset: -3px -4px; }
+    .fail-list { grid-template-columns: 1fr; }
+    .fail-list .item { border-right: none; border-bottom: 1px solid var(--ink); }
+    .fail-list .item:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="left">MBO649 · Capstone Planner · For the batch</div>
+    <div class="right">Starts tomorrow · Ends 26 July 2026</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Read this once. Then start.</div>
+    <h1>Tomorrow you start. <em>Here's how it goes.</em></h1>
+    <div class="lede">
+      The capstone is not one thing — it's three layers running at the same time. One of them quietly carries 30 marks and has to start tomorrow or it will not finish in time. This page lays out all three, in the order you actually have to act on them.
+    </div>
+  </div>
+
+  <!-- THE THREE LAYERS -->
+  <div class="plan">
+    <div class="section-head">
+      <div class="section-num">§ 01 — The shape of it</div>
+      <h2>Three layers. <em>Choose one of two.</em></h2>
+      <div class="section-sub">Track 0 is mandatory and runs the whole semester for everyone. On top of that, you pick exactly one of Track 1 or Track 2. That's the entire structure.</div>
+    </div>
+
+    <div class="tracks-3">
+
+      <!-- TRACK 0 -->
+      <div class="track-card t0">
+        <span class="tag">Track 0 · Everyone</span>
+        <h3>The Coursera layer.</h3>
+        <p class="who">Officially called "Step 0." Mandatory for every student, both tracks.</p>
+        <p class="whatfor">Pick Coursera courses adding up to 20 marks. Beginner courses are 5 marks, intermediate are 10. Mix as you like. Then record a short video reflecting on what you learned — that's another 10 marks. This is 30% of your grade and the easiest part to lose because it runs in the background and people forget about it until July.</p>
+        <ul class="deadlines">
+          <li>Submit all Coursera certificates <small>by 11 Jul</small></li>
+          <li>Submit Coursera reflection video <small>by 26 Jul</small></li>
+        </ul>
+        <div class="marks-line">30 marks · starts tomorrow</div>
+      </div>
+
+      <!-- TRACK 1 -->
+      <div class="track-card">
+        <span class="tag">Track 1 · The mentor route</span>
+        <h3>Project with an EPG.</h3>
+        <p class="who">For students who can find an External Project Guide.</p>
+        <p class="whatfor">Pick a research problem from your industry. Find a senior person willing to mentor you (cannot be a relative). Write a proposal. Do the research. Submit a 25–30 page report. Make a reflection video. The proposal is signed by you, the researcher — not by the EPG.</p>
+        <ul class="deadlines">
+          <li>EPG details <small>by 17 May</small></li>
+          <li>Project Proposal <small>by 31 May</small></li>
+          <li>Final Project Report <small>by 11 Jul</small></li>
+          <li>Reflection Video <small>by 26 Jul</small></li>
+        </ul>
+        <div class="marks-line">70 marks · choose by 17 May</div>
+      </div>
+
+      <!-- TRACK 2 -->
+      <div class="track-card">
+        <span class="tag">Track 2 · The fallback</span>
+        <h3>Project anchored to a course.</h3>
+        <p class="who">For students without an eligible EPG. Auto-assigned if you miss 17 May.</p>
+        <p class="whatfor">Pick a problem statement tied to one of the prescribed Coursera courses for Track 2. Complete that specific course. Build the project around it. Submit the same 25–30 page report and reflection video as Track 1. Same total marks.</p>
+        <ul class="deadlines">
+          <li>Designated Coursera certificate <small>by 31 May</small></li>
+          <li>Final Project Report <small>by 11 Jul</small></li>
+          <li>Reflection Video <small>by 26 Jul</small></li>
+        </ul>
+        <div class="marks-line">70 marks · default if 17 May missed</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOMORROW -->
+  <div class="tomorrow">
+    <div class="section-head">
+      <div class="section-num">§ 02 — Now do this</div>
+      <h2>Tomorrow. <em>This weekend.</em> Next week.</h2>
+      <div class="section-sub">Concrete actions for the next ten days. Do these in order. Don't skip ahead.</div>
+    </div>
+
+    <div class="day-grid">
+
+      <div class="day-row">
+        <div class="when">
+          <div class="label">Step 1</div>
+          <div class="when-name">Tomorrow <em>· Friday</em></div>
+          <div class="dates">1 May 2026 · 1 task</div>
+        </div>
+        <div class="what">
+          <div class="group">
+            <div class="group-label">The only thing that matters tomorrow</div>
+            <ul>
+              <li>Decide your track. Track 1 (you have or can get an EPG) or Track 2 (you don't). If you're 50/50, default to Track 1 — you can always fall back if your EPG isn't approved.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="when">
+          <div class="label">Step 2</div>
+          <div class="when-name">This weekend</div>
+          <div class="dates">2 — 3 May · 3 tasks</div>
+        </div>
+        <div class="what">
+          <div class="group">
+            <div class="group-label">For Track 0 (everyone)</div>
+            <ul>
+              <li>Open Coursera. Browse the eligible course list in the LMS. Pick courses adding up to 20 marks (e.g. four beginner courses, or two intermediate, or 2 + 1).</li>
+              <li>Enrol in your first course. Aim to complete one course every two weeks.</li>
+            </ul>
+          </div>
+          <div class="group">
+            <div class="group-label">If you picked Track 1</div>
+            <ul>
+              <li>Make a list of 3–5 potential EPGs. Current/former managers, ex-professors, senior people in your domain. No spouses, no blood relatives.</li>
+            </ul>
+          </div>
+          <div class="group">
+            <div class="group-label">If you picked Track 2</div>
+            <ul>
+              <li>Find the prescribed Coursera courses for Track 2 in the LMS. Pick the one whose problem statement interests you most. Enrol.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="when">
+          <div class="label">Step 3</div>
+          <div class="when-name">Next week</div>
+          <div class="dates">4 — 10 May · the EPG sprint</div>
+        </div>
+        <div class="what">
+          <div class="group">
+            <div class="group-label">Track 1 priority</div>
+            <ul>
+              <li>Send EPG outreach emails to all your shortlisted candidates by Monday.</li>
+              <li>Get the EPG's CV and fill Format-1 the moment someone says yes.</li>
+              <li>Submit EPG details on the LMS by Sunday 10 May. That is your personal target — the official deadline (17 May) is your safety net for one rejection + retry.</li>
+            </ul>
+          </div>
+          <div class="group">
+            <div class="group-label">Track 2 priority</div>
+            <ul>
+              <li>Make real progress on your Track 2 Coursera course. You'll need the certificate uploaded by 24 May (target).</li>
+            </ul>
+          </div>
+          <div class="group">
+            <div class="group-label">Everyone</div>
+            <ul>
+              <li>Finish Coursera Course 1 of your Track 0 stack. Download the certificate. Check your name is on it.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-row">
+        <div class="when">
+          <div class="label">Step 4</div>
+          <div class="when-name">After that</div>
+          <div class="dates">11 May onwards</div>
+        </div>
+        <div class="what">
+          <div class="group">
+            <div class="group-label">Then the calendar takes over</div>
+            <ul>
+              <li>From 11 May, follow the month-by-month calendar below. Every official deadline has a personal target a week ahead of it (two weeks for Coursera). Aim for the green dates, not the orange ones.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CALENDARS -->
+  <div class="calendars">
+    <div class="section-head">
+      <div class="section-num">§ 03 — The whole semester</div>
+      <h2>Four months. <em>Aim for the green.</em></h2>
+      <div class="section-sub">Saffron dates are the official university deadlines. Sage outlined dates are your personal targets — finish on those. The buffer absorbs LMS hiccups, EPG delays, and re-recordings.</div>
+    </div>
+
+    <div class="legend-mini">
+      <div class="item"><div class="sw deadline"></div>University deadline</div>
+      <div class="item"><div class="sw target"></div>Your target (buffered)</div>
+      <div class="item"><div class="sw note"></div>Working milestone</div>
+    </div>
+
+    <!-- ===================== MAY ===================== -->
+    <div class="month-block">
+      <div>
+        <div class="month-head">
+          <div class="month-name">May <em>'26</em></div>
+          <div class="month-meta">Two deadlines<br>The fork in the road</div>
+        </div>
+        <div class="cal">
+          <div class="dow">Sun</div><div class="dow">Mon</div><div class="dow">Tue</div><div class="dow">Wed</div><div class="dow">Thu</div><div class="dow">Fri</div><div class="dow">Sat</div>
+
+          <div class="day out"><span class="num">26</span></div>
+          <div class="day out"><span class="num">27</span></div>
+          <div class="day out"><span class="num">28</span></div>
+          <div class="day out"><span class="num">29</span></div>
+          <div class="day out"><span class="num">30</span></div>
+          <div class="day note"><span class="num">1</span><span class="tag-d">START</span></div>
+          <div class="day"><span class="num">2</span></div>
+
+          <div class="day"><span class="num">3</span></div>
+          <div class="day note"><span class="num">4</span><span class="tag-d">EPG sprint</span></div>
+          <div class="day"><span class="num">5</span></div>
+          <div class="day"><span class="num">6</span></div>
+          <div class="day"><span class="num">7</span></div>
+          <div class="day"><span class="num">8</span></div>
+          <div class="day"><span class="num">9</span></div>
+
+          <div class="day target"><span class="num">10</span><span class="tag-d">EPG target</span></div>
+          <div class="day"><span class="num">11</span></div>
+          <div class="day"><span class="num">12</span></div>
+          <div class="day"><span class="num">13</span></div>
+          <div class="day"><span class="num">14</span></div>
+          <div class="day"><span class="num">15</span></div>
+          <div class="day"><span class="num">16</span></div>
+
+          <div class="day deadline"><span class="num">17</span><span class="tag-d">EPG deadline</span></div>
+          <div class="day"><span class="num">18</span></div>
+          <div class="day"><span class="num">19</span></div>
+          <div class="day"><span class="num">20</span></div>
+          <div class="day"><span class="num">21</span></div>
+          <div class="day"><span class="num">22</span></div>
+          <div class="day"><span class="num">23</span></div>
+
+          <div class="day target"><span class="num">24</span><span class="tag-d">Proposal target</span></div>
+          <div class="day"><span class="num">25</span></div>
+          <div class="day"><span class="num">26</span></div>
+          <div class="day"><span class="num">27</span></div>
+          <div class="day"><span class="num">28</span></div>
+          <div class="day"><span class="num">29</span></div>
+          <div class="day"><span class="num">30</span></div>
+
+          <div class="day deadline"><span class="num">31</span><span class="tag-d">Proposal due</span></div>
+          <div class="day out"><span class="num">1</span></div>
+          <div class="day out"><span class="num">2</span></div>
+          <div class="day out"><span class="num">3</span></div>
+          <div class="day out"><span class="num">4</span></div>
+          <div class="day out"><span class="num">5</span></div>
+          <div class="day out"><span class="num">6</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="theme">The decision month.</div>
+        <div class="summary">May locks in your track and gets your first real submission in. By 31 May, every student has either a signed proposal or a Track 2 certificate uploaded.</div>
+        <ul class="focus-list">
+          <li class="target-r"><span class="d-num">10</span><span class="d-info">Submit EPG details<small>Personal target · Sunday</small></span></li>
+          <li class="deadline-r"><span class="d-num">17</span><span class="d-info">EPG deadline · auto-redirect to Track 2 if missed<small>University deadline · Sunday</small></span></li>
+          <li class="target-r"><span class="d-num">24</span><span class="d-info">Submit proposal (T1) or T2 cert<small>Personal target · Sunday</small></span></li>
+          <li class="deadline-r"><span class="d-num">31</span><span class="d-info">Proposal / Track 2 cert deadline<small>University deadline · 20 marks</small></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===================== JUNE ===================== -->
+    <div class="month-block">
+      <div>
+        <div class="month-head">
+          <div class="month-name">June <em>'26</em></div>
+          <div class="month-meta">No deadlines<br>The build month</div>
+        </div>
+        <div class="cal">
+          <div class="dow">Sun</div><div class="dow">Mon</div><div class="dow">Tue</div><div class="dow">Wed</div><div class="dow">Thu</div><div class="dow">Fri</div><div class="dow">Sat</div>
+
+          <div class="day out"><span class="num">31</span></div>
+          <div class="day"><span class="num">1</span></div>
+          <div class="day"><span class="num">2</span></div>
+          <div class="day"><span class="num">3</span></div>
+          <div class="day"><span class="num">4</span></div>
+          <div class="day"><span class="num">5</span></div>
+          <div class="day"><span class="num">6</span></div>
+
+          <div class="day note"><span class="num">7</span><span class="tag-d">Lit review done</span></div>
+          <div class="day"><span class="num">8</span></div>
+          <div class="day"><span class="num">9</span></div>
+          <div class="day"><span class="num">10</span></div>
+          <div class="day"><span class="num">11</span></div>
+          <div class="day"><span class="num">12</span></div>
+          <div class="day"><span class="num">13</span></div>
+
+          <div class="day"><span class="num">14</span></div>
+          <div class="day"><span class="num">15</span></div>
+          <div class="day"><span class="num">16</span></div>
+          <div class="day"><span class="num">17</span></div>
+          <div class="day"><span class="num">18</span></div>
+          <div class="day"><span class="num">19</span></div>
+          <div class="day note"><span class="num">20</span><span class="tag-d">Data done</span></div>
+
+          <div class="day"><span class="num">21</span></div>
+          <div class="day"><span class="num">22</span></div>
+          <div class="day"><span class="num">23</span></div>
+          <div class="day"><span class="num">24</span></div>
+          <div class="day"><span class="num">25</span></div>
+          <div class="day"><span class="num">26</span></div>
+          <div class="day target"><span class="num">27</span><span class="tag-d">All certs</span></div>
+
+          <div class="day note"><span class="num">28</span><span class="tag-d">First draft</span></div>
+          <div class="day"><span class="num">29</span></div>
+          <div class="day"><span class="num">30</span></div>
+          <div class="day out"><span class="num">1</span></div>
+          <div class="day out"><span class="num">2</span></div>
+          <div class="day out"><span class="num">3</span></div>
+          <div class="day out"><span class="num">4</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="theme">Heads down. No deadlines is a trap.</div>
+        <div class="summary">June has no university deadlines, which is exactly what makes it the month most projects fall behind. Use the silence to write a complete first draft and finish every Coursera course.</div>
+        <ul class="focus-list">
+          <li class="note-r"><span class="d-num">7</span><span class="d-info">Literature review complete<small>Working milestone</small></span></li>
+          <li class="note-r"><span class="d-num">20</span><span class="d-info">Data collection complete<small>Working milestone</small></span></li>
+          <li class="target-r"><span class="d-num">27</span><span class="d-info">All Coursera certificates downloaded<small>Personal target · 14-day buffer</small></span></li>
+          <li class="note-r"><span class="d-num">28</span><span class="d-info">First full draft of report — ugly is fine<small>Working milestone</small></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===================== JULY ===================== -->
+    <div class="month-block">
+      <div>
+        <div class="month-head">
+          <div class="month-name">July <em>'26</em></div>
+          <div class="month-meta">Two deadlines<br>The finish</div>
+        </div>
+        <div class="cal">
+          <div class="dow">Sun</div><div class="dow">Mon</div><div class="dow">Tue</div><div class="dow">Wed</div><div class="dow">Thu</div><div class="dow">Fri</div><div class="dow">Sat</div>
+
+          <div class="day out"><span class="num">28</span></div>
+          <div class="day out"><span class="num">29</span></div>
+          <div class="day out"><span class="num">30</span></div>
+          <div class="day"><span class="num">1</span></div>
+          <div class="day"><span class="num">2</span></div>
+          <div class="day"><span class="num">3</span></div>
+          <div class="day target"><span class="num">4</span><span class="tag-d">Report target</span></div>
+
+          <div class="day"><span class="num">5</span></div>
+          <div class="day"><span class="num">6</span></div>
+          <div class="day"><span class="num">7</span></div>
+          <div class="day"><span class="num">8</span></div>
+          <div class="day"><span class="num">9</span></div>
+          <div class="day"><span class="num">10</span></div>
+          <div class="day deadline"><span class="num">11</span><span class="tag-d">Report + certs</span></div>
+
+          <div class="day"><span class="num">12</span></div>
+          <div class="day note"><span class="num">13</span><span class="tag-d">Script videos</span></div>
+          <div class="day"><span class="num">14</span></div>
+          <div class="day"><span class="num">15</span></div>
+          <div class="day"><span class="num">16</span></div>
+          <div class="day"><span class="num">17</span></div>
+          <div class="day"><span class="num">18</span></div>
+
+          <div class="day target"><span class="num">19</span><span class="tag-d">Videos target</span></div>
+          <div class="day"><span class="num">20</span></div>
+          <div class="day"><span class="num">21</span></div>
+          <div class="day"><span class="num">22</span></div>
+          <div class="day"><span class="num">23</span></div>
+          <div class="day"><span class="num">24</span></div>
+          <div class="day"><span class="num">25</span></div>
+
+          <div class="day deadline"><span class="num">26</span><span class="tag-d">Videos · END</span></div>
+          <div class="day"><span class="num">27</span></div>
+          <div class="day"><span class="num">28</span></div>
+          <div class="day"><span class="num">29</span></div>
+          <div class="day"><span class="num">30</span></div>
+          <div class="day"><span class="num">31</span></div>
+          <div class="day out"><span class="num">1</span></div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="theme">Polish, submit, record. Done.</div>
+        <div class="summary">Two deadlines fifteen days apart, both with seven-day buffers. Protect the last two weeks for the videos — that's where most people get caught off-guard.</div>
+        <ul class="focus-list">
+          <li class="target-r"><span class="d-num">4</span><span class="d-info">Submit report + all Coursera certificates<small>Personal target · Saturday</small></span></li>
+          <li class="deadline-r"><span class="d-num">11</span><span class="d-info">Report + Step 0 certs deadline<small>University deadline · 40 marks combined</small></span></li>
+          <li class="note-r"><span class="d-num">13</span><span class="d-info">Scripts written for both videos<small>Working milestone</small></span></li>
+          <li class="target-r"><span class="d-num">19</span><span class="d-info">Both reflection videos recorded<small>Personal target · Sunday</small></span></li>
+          <li class="deadline-r"><span class="d-num">26</span><span class="d-info">Both reflection videos due · semester ends<small>University deadline · 40 marks</small></span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DON'T FAIL -->
+  <div class="dontfail">
+    <div class="section-head">
+      <div class="section-num">§ 04 — Don't get tripped</div>
+      <h2>Things that quietly <em>fail you</em>.</h2>
+      <div class="section-sub">Six small process slips that the orientation flags as automatic disqualifiers. Re-read before each upload.</div>
+    </div>
+
+    <div class="fail-list">
+      <div class="item">
+        <div class="num">01</div>
+        <h5>Certificate without your name</h5>
+        <p>Coursera certificates must show your enrolled name. Anonymous downloads or screenshots aren't accepted.</p>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <h5>Skipping any single submission</h5>
+        <p>All steps are mandatory. Miss one, the whole capstone is recorded as Fail — even if everything else scored full marks.</p>
+      </div>
+      <div class="item">
+        <div class="num">03</div>
+        <h5>Recording video outside the LMS</h5>
+        <p>Both reflection videos must be recorded in the LMS itself. Phone, Zoom or screen-recorder uploads won't be evaluated.</p>
+      </div>
+      <div class="item">
+        <div class="num">04</div>
+        <h5>Audio or text in place of video</h5>
+        <p>"Reflection video" is taken literally. Audio files, written notes or slide decks instead of a video won't count.</p>
+      </div>
+      <div class="item">
+        <div class="num">05</div>
+        <h5>Using a relative as your EPG</h5>
+        <p>Spouse, blood relatives and direct relatives are explicitly disallowed — even if their qualifications check out on paper.</p>
+      </div>
+      <div class="item">
+        <div class="num">06</div>
+        <h5>Editing a downloaded certificate</h5>
+        <p>Any edit to a Coursera certificate — even fixing the name — is treated as fraud. Result: Fail for the entire course.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div>Built from the MBO649 Orientation Deck</div>   
+  </footer>
+
+</div>
+</body>
+</html>
